@@ -1,0 +1,26 @@
+1) 
+select count(medicamentos.estoque) AS TOTAL 
+from medicamentos
+
+2) 
+select avg(year(now()) - year(data_nascimento)) AS media_idade_tutor
+from tutor
+
+3) 
+select min(valor_unitario)
+from medicamentos
+
+4)select max(peso)
+from paciente
+
+5) select count(*) AS total_tutor
+from tutor
+
+6) select unidade, sum(estoque * valor_unitario) AS valor_total_estoque
+from medicamentos
+group by unidade
+
+7) select id_receita, sum(valor_total) AS total_valor_itens
+from item_receita
+group by id_receita
+having sum(valor_total) > 100;
